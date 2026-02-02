@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitação de Evento</title>
+  <style>
+    body { font-family: Arial; max-width: 900px; margin: auto; }
+    label { font-weight: bold; }
+    input, textarea { width: 100%; margin-bottom: 10px; }
+    fieldset { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Solicitação de Evento</h2>
+
+<form action="/solicitacoes" method="POST" enctype="multipart/form-data">
+
+  <fieldset>
+    <legend>Identificação</legend>
+    <label>Protocolo</label>
+    <input name="numero_protocolo" required>
+
+    <label>Responsável</label>
+    <input name="nome_responsavel" required>
+
+    <label>Telefone</label>
+    <input name="telefone">
+  </fieldset>
+
+  <fieldset>
+    <legend>Evento</legend>
+    <label>Nome do Evento</label>
+    <input name="nome_evento">
+
+    <label>Tipo</label>
+    <input name="tipo_evento">
+
+    <label>Participantes</label>
+    <input name="participantes">
+
+    <label>Público Esperado</label>
+    <input name="publico_esperado">
+
+    <label>Descrição</label>
+    <textarea name="descricao_evento"></textarea>
+
+    <label>Data</label>
+    <input type="date" name="data_evento">
+
+    <label>Hora Início</label>
+    <input type="time" name="hora_inicio">
+
+    <label>Hora Fim</label>
+    <input type="time" name="hora_termino">
+  </fieldset>
+
+  <fieldset>
+    <legend>Local</legend>
+    <label>Endereço</label>
+    <input name="endereco_evento">
+
+    <label>Ruas interditadas</label>
+    <textarea name="ruas_interditadas"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Interdição</legend>
+    <label>Data</label>
+    <input type="date" name="data_interdicao">
+
+    <label>Hora Início</label>
+    <input type="time" name="hora_interdicao_inicio">
+
+    <label>Hora Fim</label>
+    <input type="time" name="hora_interdicao_termino">
+
+    <label>
+      <input type="checkbox" name="interdicao_parcial" value="1">
+      Interdição parcial
+    </label>
+
+    <label>Qtd. Agentes</label>
+    <input type="number" name="qtd_agentes">
+  </fieldset>
+
+  <fieldset>
+    <legend>Anexos</legend>
+    <label>Ofício</label>
+    <input type="file" name="file_oficio">
+
+    <label>Croqui</label>
+    <input type="file" name="file_croqui">
+
+    <label>CRLV</label>
+    <input type="file" name="file_crlv[]" multiple>
+  </fieldset>
+
+  <fieldset>
+    <legend>Observações</legend>
+    <textarea name="observacoes"></textarea>
+  </fieldset>
+
+  <button type="submit">Enviar</button>
+
+</form>
+
+</body>
+</html>
